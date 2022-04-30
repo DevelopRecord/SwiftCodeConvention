@@ -7,8 +7,9 @@
 [2. 델리게이트](#Delegate)   
 [3. 클로저](#클로저)   
 [4. 주석](#주석)   
-[5. 줄바꿈](#줄바꿈)   
-[6. 기타 사항](#기타-사항)   
+[5. 임포트](#import)   
+[6. 줄바꿈](#줄바꿈)   
+[7. 기타 사항](#기타-사항)   
 
 #### 네이밍   
 
@@ -114,6 +115,17 @@ override func viewDidLoad() {
 }
 </code></pre>
 
+#### import   
+- 모듈 임포트는 최상단에 작성하며 알파벳을 기준으로 나열합니다.
+- 내장 라이브러리를 먼저 임포트하고 서드파티 라이브러리들을 임포트합니다.
+- UIKit을 임포트 해야한다면 Foundation은 지워주도록 합니다.
+<pre><code>
+import UIKit
+import SnapKit
+import SwiftyBeaver
+import Then
+</code></pre>
+
 #### 줄바꿈   
 - 코드 안에서는 불필요한 줄바꿈은 하지 않습니다.
 - 코드가 없는 빈 줄은 아무것도 없는 공백 상태를 유지합니다.(필수인지는 잘 모르겠음)
@@ -121,7 +133,7 @@ override func viewDidLoad() {
 - <pre><code>// MARK: - </code></pre>에는 위, 아래로 공백 상태를 유지합니다.
 - 함수 내부 코드는 들여쓰기를 합니다.
 <pre><code>
-func doSomething(completion: ()->Void) {
+func doSomething(completion: () -> Void) {
   // do something
 }
 </code></pre>
@@ -165,7 +177,8 @@ class ActionButton: UIButton {
   }
 }
 </code></pre>
-이후 아래 방식으로 재사용 가능합니다.
+이후 아래 방식으로 재사용 가능합니다.   
+
 <code><pre>
 private let previousButton = ActionButton(title: "이전")
 private let nextButton = ActionButton(title: "다음")
